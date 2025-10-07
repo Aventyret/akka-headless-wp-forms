@@ -5,7 +5,7 @@ Plugin URI: https://github.com/aventyret/akka-wp/blob/main/plugins/akka-headless
 Description: Forms plugin for Akka
 Author: Mediakooperativet, Äventyret
 Author URI: https://aventyret.com
-Version: 0.3.9
+Version: 0.1.1
 */
 
 if (basename($_SERVER['PHP_SELF']) == basename(__FILE__)){
