@@ -80,7 +80,7 @@ class Akka_headless_wp_forms_api
       }
       if ($field['type'] == 'file') {
         $html .= $field['label'] . '
-        <br/>':
+        <br/>';
 
         foreach(Resolvers::resolve_array_field($fields, $field['slug']) as $downloadUrl) {
           $html .= $downloadUrl . '
