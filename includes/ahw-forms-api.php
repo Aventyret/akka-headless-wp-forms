@@ -42,7 +42,7 @@ class Akka_headless_wp_forms_api
 
   private static function validate_form($form, $fields) {
     return array_reduce($form['form_fields'], function($all_fields_are_valid, $field) use($fields) {
-      if ($field['required'] && !Resolvers::resolve_field($fields, $field['slug'])) {
+      if ($field['required'] && !Resolvers::resolve_field($fields, $field['field_id'])) {
         $all_fields_are_valid = false;
       }
       return $all_fields_are_valid;
@@ -71,10 +71,21 @@ class Akka_headless_wp_forms_api
     <br/>';
 
     foreach($form['form_fields'] as $field) {
-      error_log(json_encode(($field)));
-      if ($field['type'] != 'file') {
+      if (!in_array($field['type'], ['file', 'select'])) {
         $html .= $field['label'] . ':
-        <br/>' . (Resolvers::resolve_field($fields, $field['slug']) ?? '-') . '
+        <br/>' . (Resolvers::resolve_field($fields, $field['field_id']) ?? '-') . '
+        <br/>
+        <br/>';
+      }
+      if ($field['type'] == 'select') {
+        $choice_text = '-';
+        foreach($field['choices'] as $choice) {
+          if ($choice['value'] == Resolvers::resolve_field($fields, $field['field_id'])) {
+            $choice_text = $choice['text'];
+          }
+        }
+        $html .= $field['label'] . ':
+        <br/>' . $choice_text . '
         <br/>
         <br/>';
       }
@@ -82,7 +93,7 @@ class Akka_headless_wp_forms_api
         $html .= $field['label'] . '
         <br/>';
 
-        foreach(Resolvers::resolve_array_field($fields, $field['slug']) as $downloadUrl) {
+        foreach(Resolvers::resolve_array_field($fields, $field['field_id']) as $downloadUrl) {
           $html .= $downloadUrl . '
           <br/>';
         }
@@ -106,19 +117,33 @@ class Akka_headless_wp_forms_api
   private static function save_entries($form, $fields) {
     $content = '';
     foreach($form['form_fields'] as $field) {
-      if ($field['type'] != 'file') {
+      if (!in_array($field['type'], ['file', 'select'])) {
         $content .= $field['label'] . ':
-' . (Resolvers::resolve_field($fields, $field['slug']) ?? '-') . '
+' . (Resolvers::resolve_field($fields, $field['field_id']) ?? '-') . '
+
+';
+      }
+      if ($field['type'] == 'select') {
+        $choice_text = '-';
+        foreach($field['choices'] as $choice) {
+          if ($choice['value'] == Resolvers::resolve_field($fields, $field['field_id'])) {
+            $choice_text = $choice['text'];
+          }
+        }
+        $content .= $field['label'] . ':
+' . $choice_text . '
 
 ';
       }
       if ($field['type'] == 'file') {
         $content .= $field['label'] . ':
 ';
-        foreach(Resolvers::resolve_array_field($fields, $field['slug']) as $downloadUrl) {
+        foreach(Resolvers::resolve_array_field($fields, $field['field_id']) as $downloadUrl) {
           $content .= $downloadUrl . '
 ';
         }
+        $content .= '
+';
       }
     }
 

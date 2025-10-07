@@ -129,9 +129,9 @@ class Akka_headless_wp_forms_post_type
                   ],
                   [
                     'key' => 'field_form_fields_choices_value',
-                    'label' => __('Value', 'akka-forms'),
+                    'label' => __('Id', 'akka-forms'),
                     'name' => 'value',
-                    'type' => 'text',
+                    'type' => 'unique_id',
                     'parent_repeater' => 'field_form_fields_choices',
                   ],
                 ],
@@ -155,11 +155,10 @@ class Akka_headless_wp_forms_post_type
                 'parent_repeater' => 'field_form_fields',
               ],
               [
-                'key' => 'field_form_fields_slug',
-                'label' => __('Name', 'akka-forms'),
-                'name' => 'slug',
-                'required' => '1',
-                'type' => 'text',
+                'key' => 'field_form_fields_field_id',
+                'label' => __('Id', 'akka-forms'),
+                'name' => 'field_id',
+                'type' => 'unique_id',
                 'parent_repeater' => 'field_form_fields',
               ],
               [
