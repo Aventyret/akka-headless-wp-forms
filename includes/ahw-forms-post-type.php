@@ -33,7 +33,7 @@ class Akka_headless_wp_forms_post_type
         'confirmation_text' => Resolvers::resolve_field($post_data, 'confirmation_text'),
         'submit_text' => Resolvers::resolve_field($post_data, 'submit_text'),
         'required_text' => __('is required', 'akka-forms'),
-        'invalid_text' => __('is required', 'akka-forms'),
+        'invalid_text' => __('is invalid', 'akka-forms'),
         'form_error_text' => __('The form has errors', 'akka-forms'),
         'form_failed_text' => __('Your submission failed. Please try again.', 'akka-forms'),
       ];
@@ -70,6 +70,7 @@ class Akka_headless_wp_forms_post_type
       'textarea' => __('Text area', 'akka-forms'),
       'select' => __('Dropdown', 'akka-forms'),
       'checkbox' => __('Checkbox', 'akka-forms'),
+      'heading' => __('Sub heading', 'akka-forms'),
     ];
     if (env('AZURE_STORAGE_PRIVATE_ACCOUNT')) {
       $field_type_choices['file'] = __('File', 'akka-forms');
@@ -86,6 +87,14 @@ class Akka_headless_wp_forms_post_type
             'layout' => 'block',
             'button_label' => 'Add field',
             'sub_fields' => [
+              [
+                'key' => 'field_form_fields_label',
+                'label' => __('Label', 'akka-forms'),
+                'name' => 'label',
+                'required' => '1',
+                'type' => 'text',
+                'parent_repeater' => 'field_form_fields',
+              ],
               [
                 'key' => 'field_form_fields_type',
                 'label' => __('Field type', 'akka-forms'),
@@ -147,11 +156,10 @@ class Akka_headless_wp_forms_post_type
                 'parent_repeater' => 'field_form_fields',
               ],
               [
-                'key' => 'field_form_fields_label',
-                'label' => __('Label', 'akka-forms'),
-                'name' => 'label',
-                'required' => '1',
-                'type' => 'text',
+                'key' => 'field_form_fields_required',
+                'label' => __('Required', 'akka-forms'),
+                'name' => 'required',
+                'type' => 'true_false',
                 'parent_repeater' => 'field_form_fields',
               ],
               [
@@ -159,13 +167,6 @@ class Akka_headless_wp_forms_post_type
                 'label' => __('Id', 'akka-forms'),
                 'name' => 'field_id',
                 'type' => 'unique_id',
-                'parent_repeater' => 'field_form_fields',
-              ],
-              [
-                'key' => 'field_form_fields_required',
-                'label' => __('Required', 'akka-forms'),
-                'name' => 'required',
-                'type' => 'true_false',
                 'parent_repeater' => 'field_form_fields',
               ],
             ],
