@@ -42,11 +42,21 @@ class Akka_headless_wp_forms_api
 
   private static function validate_form($form, $fields) {
     return array_reduce($form['form_fields'], function($all_fields_are_valid, $field) use($fields) {
-      if ($field['required'] && !Resolvers::resolve_field($fields, $field['field_id'])) {
+      if ($field['required'] && self::value_is_empty(Resolvers::resolve_field($fields, $field['field_id']))) {
         $all_fields_are_valid = false;
       }
       return $all_fields_are_valid;
     }, true);
+  }
+
+  private static function value_is_empty($value) {
+    if ($value === '0') {
+      return false;
+    }
+    if ($value === 0) {
+      return false;
+    }
+    return !$value;
   }
 
   private static function send_email_confirmation($form, $fields) {
