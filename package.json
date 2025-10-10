@@ -6,7 +6,13 @@
     "dev": "node build/dev.mjs",
     "build": "node build/build.mjs",
     "format": "prettier ./src --write && prettier ./includes --write && prettier ./public --write",
-    "format:check": "prettier ./src --check && prettier ./includes --check && prettier ./public --check"
+    "format:check": "prettier ./src --check && prettier ./includes --check && prettier ./public --check",
+    "translate": "npm run translate:pot && npm run translate:update",
+    "translate:compile": "npm run translate:mo && npm run translate:js",
+    "translate:js": "npx po2json languages/akka-forms-sv_SE.po languages/akka-forms-sv_SE-editor.json -f jed1.x && npx po2json languages/akka-forms-sv_SE.po languages/akka-forms-sv_SE-editor.json -f jed1.x && npx po2json languages/akka-forms-da_DK.po languages/akka-forms-da_DK-editor.json -f jed1.x",
+    "translate:mo": "wp --allow-root i18n make-mo languages languages",
+    "translate:pot": "wp --allow-root i18n make-pot . languages/akka-forms.pot --include=\"includes,src\" --domain=akka-forms",
+    "translate:update": "for filename in languages/*.po; do msgmerge -U $filename languages/akka-forms.pot; done; rm -f languages/*.po~"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +20,7 @@
     "@aventyret/akka-wp-editor": "^0.8.3",
     "@prettier/plugin-php": "^0.22.2",
     "esbuild": "^0.24.0",
+    "po2json": "^0.4.5",
     "prettier": "^3.3.3"
   },
   "dependencies": {

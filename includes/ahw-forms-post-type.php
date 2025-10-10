@@ -23,11 +23,11 @@ class Akka_headless_wp_forms_post_type
         'required_text' => __('Consent is required', 'akka-forms'),
       ] : null;
       $post_data['settings'] = [
-        'email_confirmation' => Resolvers::resolve_boolean_field($post_data, 'email_confirmation') ? [
+        'email_confirmation' => in_array('email', Resolvers::resolve_array_field($post_data, 'confirmations')) ? [
           'to_address' => Resolvers::resolve_field($post_data, 'email_confirmation_to_address'),
           'subject' => Resolvers::resolve_field($post_data, 'email_confirmation_subject')
         ] : null,
-        'save_entries' => Resolvers::resolve_boolean_field($post_data, 'save_entries'),
+        'save_entries' => in_array('save_entries', Resolvers::resolve_array_field($post_data, 'confirmations')),
       ];
       $post_data['texts'] = [
         'confirmation_text' => Resolvers::resolve_field($post_data, 'confirmation_text'),
@@ -215,9 +215,16 @@ class Akka_headless_wp_forms_post_type
             'required' => '1',
           ],
           [
-            'label' => __('Email confirmation', 'akka-forms'),
-            'name' => 'email_confirmation',
-            'type' => 'true_false',
+            'label' => __('Confirmations', 'akka-forms'),
+            'name' => 'confirmations',
+            'type' => 'select',
+            'choices' => [
+              'email' => __('Email', 'akka-forms'),
+              'save_entries' => __('Save form entries', 'akka-forms'),
+            ],
+            'return_format' => 'value',
+            'multiple' => 1,
+            'required' => 1
           ],
           [
             'label' => __('Email confirmation to address', 'akka-forms'),
@@ -227,9 +234,9 @@ class Akka_headless_wp_forms_post_type
             'conditional_logic' => [
               [
                 [
-                  'field' => 'field_email_confirmation',
+                  'field' => 'field_confirmations',
                   'operator' => '==',
-                  'value' => '1',
+                  'value' => 'email',
                 ],
               ],
             ],
@@ -241,17 +248,12 @@ class Akka_headless_wp_forms_post_type
             'conditional_logic' => [
               [
                 [
-                  'field' => 'field_email_confirmation',
+                  'field' => 'field_confirmations',
                   'operator' => '==',
-                  'value' => '1',
+                  'value' => 'email',
                 ],
               ],
             ],
-          ],
-          [
-            'label' => __('Save form entries', 'akka-forms'),
-            'name' => 'save_entries',
-            'type' => 'true_false',
           ],
         ],
         'position' => 'acf_after_title',

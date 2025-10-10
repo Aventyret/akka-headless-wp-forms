@@ -14,3 +14,14 @@ add_action('enqueue_block_editor_assets', function() {
       filemtime(AKKA_HEADLESS_WP_FORMS_DIR . '/dist/editor.css')
   );
 });
+
+add_action('admin_enqueue_scripts', function () {
+  wp_set_script_translations('akka-forms', 'akka-forms', dirname( plugin_basename ( __FILE__ ) ) . '/../languages');
+});
+
+add_action('init', function () {
+  /**
+   * Add translations text domain
+   */
+  load_plugin_textdomain('akka-forms', false, WP_LANG_DIR . '/plugins');
+});

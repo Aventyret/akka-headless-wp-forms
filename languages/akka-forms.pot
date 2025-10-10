@@ -1,0 +1,193 @@
+# Copyright (C) 2025 Mediakooperativet, Äventyret
+# This file is distributed under the same license as the Akka Headless WP – Forms plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Akka Headless WP – Forms 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/akka-headless-wp-forms\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-10-10T09:40:52+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: akka-forms\n"
+
+#. Plugin Name of the plugin
+#: akka-headless-wp-forms.php
+msgid "Akka Headless WP – Forms"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: akka-headless-wp-forms.php
+msgid "https://github.com/aventyret/akka-wp/blob/main/plugins/akka-headless-wp-forms"
+msgstr ""
+
+#. Description of the plugin
+#: akka-headless-wp-forms.php
+msgid "Forms plugin for Akka"
+msgstr ""
+
+#. Author of the plugin
+#: akka-headless-wp-forms.php
+msgid "Mediakooperativet, Äventyret"
+msgstr ""
+
+#. Author URI of the plugin
+#: akka-headless-wp-forms.php
+msgid "https://aventyret.com"
+msgstr ""
+
+#: includes/ahw-forms-api.php:69
+#: includes/ahw-forms-post-type.php:51
+#: src/blocks/form-block.js:14
+#: src/blocks/form-block.js:50
+#: src/blocks/form-block.js:52
+msgid "Form"
+msgstr ""
+
+#: includes/ahw-forms-api.php:69
+msgid "was submitted."
+msgstr ""
+
+#: includes/ahw-forms-api.php:152
+msgid "Form entry"
+msgstr ""
+
+#: includes/ahw-forms-post-type.php:23
+msgid "Consent is required"
+msgstr ""
+
+#: includes/ahw-forms-post-type.php:35
+msgid "is required"
+msgstr ""
+
+#: includes/ahw-forms-post-type.php:36
+msgid "is invalid"
+msgstr ""
+
+#: includes/ahw-forms-post-type.php:37
+msgid "The form has errors"
+msgstr ""
+
+#: includes/ahw-forms-post-type.php:38
+msgid "Your submission failed. Please try again."
+msgstr ""
+
+#: includes/ahw-forms-post-type.php:48
+#: includes/ahw-forms-post-type.php:50
+msgid "Forms"
+msgstr ""
+
+#: includes/ahw-forms-post-type.php:52
+#: includes/ahw-forms-post-type.php:53
+msgid "Add New Form"
+msgstr ""
+
+#: includes/ahw-forms-post-type.php:67
+msgid "Text"
+msgstr ""
+
+#: includes/ahw-forms-post-type.php:68
+#: includes/ahw-forms-post-type.php:222
+msgid "Email"
+msgstr ""
+
+#: includes/ahw-forms-post-type.php:69
+msgid "Ssn"
+msgstr ""
+
+#: includes/ahw-forms-post-type.php:70
+msgid "Text area"
+msgstr ""
+
+#: includes/ahw-forms-post-type.php:71
+msgid "Dropdown"
+msgstr ""
+
+#: includes/ahw-forms-post-type.php:72
+msgid "Checkbox"
+msgstr ""
+
+#: includes/ahw-forms-post-type.php:73
+msgid "Sub heading"
+msgstr ""
+
+#: includes/ahw-forms-post-type.php:76
+msgid "File"
+msgstr ""
+
+#: includes/ahw-forms-post-type.php:81
+msgid "Form fields"
+msgstr ""
+
+#: includes/ahw-forms-post-type.php:84
+msgid "Fields"
+msgstr ""
+
+#: includes/ahw-forms-post-type.php:92
+#: includes/ahw-forms-post-type.php:134
+msgid "Label"
+msgstr ""
+
+#: includes/ahw-forms-post-type.php:100
+msgid "Field type"
+msgstr ""
+
+#: includes/ahw-forms-post-type.php:110
+msgid "Placeholder text"
+msgstr ""
+
+#: includes/ahw-forms-post-type.php:126
+msgid "Choices"
+msgstr ""
+
+#: includes/ahw-forms-post-type.php:141
+#: includes/ahw-forms-post-type.php:167
+msgid "Id"
+msgstr ""
+
+#: includes/ahw-forms-post-type.php:160
+msgid "Required"
+msgstr ""
+
+#: includes/ahw-forms-post-type.php:175
+msgid "Require consent"
+msgstr ""
+
+#: includes/ahw-forms-post-type.php:181
+msgid "Consent text"
+msgstr ""
+
+#: includes/ahw-forms-post-type.php:197
+msgid "Submit button text"
+msgstr ""
+
+#: includes/ahw-forms-post-type.php:207
+msgid "Form settings"
+msgstr ""
+
+#: includes/ahw-forms-post-type.php:210
+msgid "Confirmation message"
+msgstr ""
+
+#: includes/ahw-forms-post-type.php:218
+msgid "Confirmations"
+msgstr ""
+
+#: includes/ahw-forms-post-type.php:223
+msgid "Save form entries"
+msgstr ""
+
+#: includes/ahw-forms-post-type.php:230
+msgid "Email confirmation to address"
+msgstr ""
+
+#: includes/ahw-forms-post-type.php:245
+msgid "Email confirmation subject"
+msgstr ""
+
+#: src/blocks/form-block.js:57
+msgid "Select a form"
+msgstr ""
