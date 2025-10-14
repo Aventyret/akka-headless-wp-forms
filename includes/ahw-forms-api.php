@@ -85,7 +85,7 @@ class Akka_headless_wp_forms_api
     <br/>';
 
     foreach($form['form_fields'] as $field) {
-      if (!in_array($field['type'], ['file', 'select'])) {
+      if (!in_array($field['type'], ['file', 'select', 'heading'])) {
         $html .= $field['label'] . ':
         <br/>' . (Resolvers::resolve_field($fields, $field['field_id']) ?? '-') . '
         <br/>
@@ -107,8 +107,13 @@ class Akka_headless_wp_forms_api
         $html .= $field['label'] . '
         <br/>';
 
-        foreach(Resolvers::resolve_array_field($fields, $field['field_id']) as $downloadUrl) {
+        $files = Resolvers::resolve_array_field($fields, $field['field_id']);
+        foreach($files as $downloadUrl) {
           $html .= $downloadUrl . '
+          <br/>';
+        }
+        if (empty($files)) {
+          $html .= '-
           <br/>';
         }
         $html .= '
@@ -131,7 +136,7 @@ class Akka_headless_wp_forms_api
   private static function save_entries($form, $fields) {
     $content = '';
     foreach($form['form_fields'] as $field) {
-      if (!in_array($field['type'], ['file', 'select'])) {
+      if (!in_array($field['type'], ['file', 'select', 'heading'])) {
         $content .= $field['label'] . ':
 ' . (Resolvers::resolve_field($fields, $field['field_id']) ?? '-') . '
 
@@ -152,8 +157,13 @@ class Akka_headless_wp_forms_api
       if ($field['type'] == 'file') {
         $content .= $field['label'] . ':
 ';
-        foreach(Resolvers::resolve_array_field($fields, $field['field_id']) as $downloadUrl) {
+        $files = Resolvers::resolve_array_field($fields, $field['field_id']);
+        foreach($files as $downloadUrl) {
           $content .= $downloadUrl . '
+';
+        }
+        if (empty($files)) {
+          $content .= '-
 ';
         }
         $content .= '
