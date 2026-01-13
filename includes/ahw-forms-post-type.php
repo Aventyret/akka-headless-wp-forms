@@ -106,6 +106,22 @@ class Akka_headless_wp_forms_post_type
                 'parent_repeater' => 'field_form_fields',
               ],
               [
+                'key' => 'field_form_fields_text',
+                'label' => __('Text', 'akka-forms'),
+                'name' => 'text',
+                'type' => 'textarea',
+                'conditional_logic' => [
+                  [
+                    [
+                      'field' => 'field_form_fields_type',
+                      'operator' => '==',
+                      'value' => 'heading',
+                    ],
+                  ],
+                ],
+                'parent_repeater' => 'field_form_fields',
+              ],
+              [
                 'key' => 'field_form_fields_placebolder',
                 'label' => __('Placeholder text', 'akka-forms'),
                 'name' => 'placeholder',
