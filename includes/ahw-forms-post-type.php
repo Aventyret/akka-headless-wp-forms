@@ -137,6 +137,29 @@ class Akka_headless_wp_forms_post_type
                     'parent_repeater' => 'field_form_fields_choices',
                   ],
                   [
+                    'key' => 'field_form_fields_choices_extra_information',
+                    'label' => __('Show extra information', 'akka-forms'),
+                    'name' => 'extra_information',
+                    'type' => 'true_false',
+                    'parent_repeater' => 'field_form_fields_choices',
+                  ],
+                  [
+                    'key' => 'field_form_fields_choices_extra_information_label',
+                    'label' => __('Label for extra information', 'akka-forms'),
+                    'name' => 'extra_information_label',
+                    'type' => 'text',
+                    'conditional_logic' => [
+                      [
+                        [
+                          'field' => 'field_form_fields_choices_extra_information',
+                          'operator' => '==',
+                          'value' => '1',
+                        ],
+                      ],
+                    ],
+                    'parent_repeater' => 'field_form_fields_choices',
+                  ],
+                  [
                     'key' => 'field_form_fields_choices_value',
                     'label' => __('Id', 'akka-forms'),
                     'name' => 'value',

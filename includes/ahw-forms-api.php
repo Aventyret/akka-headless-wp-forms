@@ -93,15 +93,29 @@ class Akka_headless_wp_forms_api
       }
       if ($field['type'] == 'select') {
         $choice_text = '-';
+        $extra_information_label = null;
+        $extra_information_text = '-';
         foreach($field['choices'] as $choice) {
           if ($choice['value'] == Resolvers::resolve_field($fields, $field['field_id'])) {
             $choice_text = $choice['text'];
+
+            if (Resolvers::resolve_field($choice, 'extra_information')) {
+              $extra_information_label = $choice['extra_information_label'];
+              $extra_information_text = Resolvers::resolve_field($fields, $field['field_id'] . '_extra_information') ?? '-';
+            }
           }
         }
         $html .= $field['label'] . ':
         <br/>' . $choice_text . '
         <br/>
         <br/>';
+
+        if ($extra_information_label) {
+          $html .=  $extra_information_label . '
+          <br/>' . $extra_information_text . '
+          <br/>
+          <br/>';
+        }
       }
       if ($field['type'] == 'file') {
         $html .= $field['label'] . '
@@ -144,15 +158,31 @@ class Akka_headless_wp_forms_api
       }
       if ($field['type'] == 'select') {
         $choice_text = '-';
+        $extra_information_label = null;
+        $extra_information_text = '-';
         foreach($field['choices'] as $choice) {
           if ($choice['value'] == Resolvers::resolve_field($fields, $field['field_id'])) {
             $choice_text = $choice['text'];
+
+            if (Resolvers::resolve_field($choice, 'extra_information')) {
+              $extra_information_label = $choice['extra_information_label'];
+              $extra_information_text = Resolvers::resolve_field($fields, $field['field_id'] . '_extra_information') ?? '-';
+            }
           }
         }
         $content .= $field['label'] . ':
 ' . $choice_text . '
 
 ';
+
+        if ($extra_information_label) {
+          $extra_information_text = '-';
+
+          $content .=  $extra_information_label . '
+' . $extra_information_text . '
+
+';
+        }
       }
       if ($field['type'] == 'file') {
         $content .= $field['label'] . ':
