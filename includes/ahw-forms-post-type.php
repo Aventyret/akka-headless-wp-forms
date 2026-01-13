@@ -199,6 +199,15 @@ class Akka_headless_wp_forms_post_type
                 'label' => __('Required', 'akka-forms'),
                 'name' => 'required',
                 'type' => 'true_false',
+                'conditional_logic' => [
+                  [
+                    [
+                      'field' => 'field_form_fields_type',
+                      'operator' => '!=',
+                      'value' => 'heading',
+                    ],
+                  ],
+                ],
                 'parent_repeater' => 'field_form_fields',
               ],
               [
