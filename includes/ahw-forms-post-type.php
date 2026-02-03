@@ -75,6 +75,9 @@ class Akka_headless_wp_forms_post_type
     if (env('AZURE_STORAGE_PRIVATE_ACCOUNT')) {
       $field_type_choices['file'] = __('File', 'akka-forms');
     }
+    if (env('AKKA_FORMS_ALLOW_SIGNATURE_FIELD')) {
+      $field_type_choices['signature'] = __('Signature', 'akka-forms');
+    }
     return [
       [
         'key' => self::$post_type_slug . '_fields',
