@@ -100,15 +100,15 @@
           SelectControl,
           {
             label: __("Form", "akka-forms"),
-            value: formId,
+            value: formId + '',
             options: [
               {
                 value: "0",
                 label: __("Select a form", "akka-forms")
               },
-              ...forms.map((form) => ({ value: form.id, label: form.title }))
+              ...forms.map((form) => ({ value: form.id + '', label: form.title }))
             ],
-            onChange: (value) => setAttributes({ formId: value })
+            onChange: (value) => setAttributes({ formId: parseInt(value, 10) })
           }
         ))));
       }
