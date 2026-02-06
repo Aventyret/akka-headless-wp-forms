@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/akka-headless-wp-"
 "forms\n"
-"POT-Creation-Date: 2025-10-10T09:40:52+00:00\n"
+"POT-Creation-Date: 2026-02-06T15:58:53+00:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -40,17 +40,17 @@ msgstr ""
 msgid "https://aventyret.com"
 msgstr ""
 
-#: includes/ahw-forms-api.php:69 includes/ahw-forms-post-type.php:51
+#: includes/ahw-forms-api.php:83 includes/ahw-forms-post-type.php:51
 #: src/blocks/form-block.js:14 src/blocks/form-block.js:50
 #: src/blocks/form-block.js:52
 msgid "Form"
 msgstr ""
 
-#: includes/ahw-forms-api.php:69
+#: includes/ahw-forms-api.php:83
 msgid "was submitted."
 msgstr "blev indsendt."
 
-#: includes/ahw-forms-api.php:152
+#: includes/ahw-forms-api.php:206
 msgid "Form entry"
 msgstr "Formularindtastning"
 
@@ -82,11 +82,11 @@ msgstr "Formularer"
 msgid "Add New Form"
 msgstr "Tilføj ny formular"
 
-#: includes/ahw-forms-post-type.php:67
+#: includes/ahw-forms-post-type.php:67 includes/ahw-forms-post-type.php:113
 msgid "Text"
 msgstr "Tekst"
 
-#: includes/ahw-forms-post-type.php:68 includes/ahw-forms-post-type.php:222
+#: includes/ahw-forms-post-type.php:68 includes/ahw-forms-post-type.php:278
 msgid "Email"
 msgstr "E-mail"
 
@@ -114,71 +114,87 @@ msgstr "Underoverskrift"
 msgid "File"
 msgstr "Fil"
 
-#: includes/ahw-forms-post-type.php:81
+#: includes/ahw-forms-post-type.php:79
+msgid "Signature"
+msgstr ""
+
+#: includes/ahw-forms-post-type.php:84
 msgid "Form fields"
 msgstr "Formularfelter"
 
-#: includes/ahw-forms-post-type.php:84
+#: includes/ahw-forms-post-type.php:87
 msgid "Fields"
 msgstr "Formularfelter"
 
-#: includes/ahw-forms-post-type.php:92 includes/ahw-forms-post-type.php:134
+#: includes/ahw-forms-post-type.php:95 includes/ahw-forms-post-type.php:153
 msgid "Label"
 msgstr "Tekst"
 
-#: includes/ahw-forms-post-type.php:100
+#: includes/ahw-forms-post-type.php:103
 msgid "Field type"
 msgstr "Felttype"
 
-#: includes/ahw-forms-post-type.php:110
+#: includes/ahw-forms-post-type.php:129
 msgid "Placeholder text"
 msgstr "Pladsholdertekst"
 
-#: includes/ahw-forms-post-type.php:126
+#: includes/ahw-forms-post-type.php:145
 msgid "Choices"
 msgstr "Valg"
 
-#: includes/ahw-forms-post-type.php:141 includes/ahw-forms-post-type.php:167
+#: includes/ahw-forms-post-type.php:160
+msgid "Show extra information"
+msgstr "Vis ekstra information"
+
+#: includes/ahw-forms-post-type.php:167
+msgid "Label for extra information"
+msgstr "Etiket for yderligere information"
+
+#: includes/ahw-forms-post-type.php:183 includes/ahw-forms-post-type.php:218
 msgid "Id"
 msgstr ""
 
-#: includes/ahw-forms-post-type.php:160
+#: includes/ahw-forms-post-type.php:202
 msgid "Required"
 msgstr "Påkrævet"
 
-#: includes/ahw-forms-post-type.php:175
+#: includes/ahw-forms-post-type.php:226
 msgid "Require consent"
 msgstr "Kræv samtykke"
 
-#: includes/ahw-forms-post-type.php:181
+#: includes/ahw-forms-post-type.php:232
 msgid "Consent text"
 msgstr "Samtykketekst"
 
-#: includes/ahw-forms-post-type.php:197
+#: includes/ahw-forms-post-type.php:248
 msgid "Submit button text"
 msgstr "Tekst på knappen Send"
 
-#: includes/ahw-forms-post-type.php:207
+#: includes/ahw-forms-post-type.php:254
+msgid "Allow pdf download"
+msgstr "Tillad pdf-download"
+
+#: includes/ahw-forms-post-type.php:263
 msgid "Form settings"
 msgstr "Formularindstillinger"
 
-#: includes/ahw-forms-post-type.php:210
+#: includes/ahw-forms-post-type.php:266
 msgid "Confirmation message"
 msgstr "Bekræftelsesbesked"
 
-#: includes/ahw-forms-post-type.php:218
+#: includes/ahw-forms-post-type.php:274
 msgid "Confirmations"
 msgstr "Bekræftelser"
 
-#: includes/ahw-forms-post-type.php:223
+#: includes/ahw-forms-post-type.php:279
 msgid "Save form entries"
 msgstr "Gem formularindtastninger"
 
-#: includes/ahw-forms-post-type.php:230
+#: includes/ahw-forms-post-type.php:286
 msgid "Email confirmation to address"
 msgstr "E-mailbekræftelse til adresse"
 
-#: includes/ahw-forms-post-type.php:245
+#: includes/ahw-forms-post-type.php:301
 msgid "Email confirmation subject"
 msgstr "Emne for e-mailbekræftelse"
 

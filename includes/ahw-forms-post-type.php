@@ -75,7 +75,7 @@ class Akka_headless_wp_forms_post_type
     if (env('AZURE_STORAGE_PRIVATE_ACCOUNT')) {
       $field_type_choices['file'] = __('File', 'akka-forms');
     }
-    if (env('AKKA_FORMS_ALLOW_SIGNATURE_FIELD')) {
+    if (env('AKKA_FORMS_ALLOW_SIGNATURE_FIELD') && env('AZURE_STORAGE_PRIVATE_ACCOUNT')) {
       $field_type_choices['signature'] = __('Signature', 'akka-forms');
     }
     return [
@@ -249,6 +249,11 @@ class Akka_headless_wp_forms_post_type
             'name' => 'submit_text',
             'type' => 'text',
             'required' => '1',
+          ],
+          [
+            'label' => __('Allow pdf download', 'akka-forms'),
+            'name' => 'allow_download',
+            'type' => 'true_false',
           ],
         ],
         'position' => 'acf_after_title',
