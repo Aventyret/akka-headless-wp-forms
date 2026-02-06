@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Akka Headless WP – Forms 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/akka-headless-wp-"
 "forms\n"
-"POT-Creation-Date: 2026-02-06T15:58:53+00:00\n"
-"PO-Revision-Date: 2026-02-06 17:01+0100\n"
+"POT-Creation-Date: 2026-02-06T20:36:19+00:00\n"
+"PO-Revision-Date: 2026-02-06 21:37+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sv_SE\n"
@@ -43,7 +43,7 @@ msgstr ""
 msgid "https://aventyret.com"
 msgstr ""
 
-#: includes/ahw-forms-api.php:83 includes/ahw-forms-post-type.php:51
+#: includes/ahw-forms-api.php:83 includes/ahw-forms-post-type.php:53
 #: src/blocks/form-block.js:14 src/blocks/form-block.js:50
 #: src/blocks/form-block.js:52
 msgid "Form"
@@ -61,143 +61,151 @@ msgstr "Formulärinlägg"
 msgid "Consent is required"
 msgstr "Kräv medgivande"
 
-#: includes/ahw-forms-post-type.php:35
+#: includes/ahw-forms-post-type.php:37
 msgid "is required"
 msgstr "är obligatoriskt"
 
-#: includes/ahw-forms-post-type.php:36
+#: includes/ahw-forms-post-type.php:38
 msgid "is invalid"
 msgstr "är ogiltig"
 
-#: includes/ahw-forms-post-type.php:37
+#: includes/ahw-forms-post-type.php:39
 msgid "The form has errors"
 msgstr "Formuläret innehåller fel"
 
-#: includes/ahw-forms-post-type.php:38
+#: includes/ahw-forms-post-type.php:40
 msgid "Your submission failed. Please try again."
 msgstr "Det gick inte att skicka formuläret. Försök gärna igen."
 
-#: includes/ahw-forms-post-type.php:48 includes/ahw-forms-post-type.php:50
+#: includes/ahw-forms-post-type.php:50 includes/ahw-forms-post-type.php:52
 msgid "Forms"
 msgstr "Formulär"
 
-#: includes/ahw-forms-post-type.php:52 includes/ahw-forms-post-type.php:53
+#: includes/ahw-forms-post-type.php:54 includes/ahw-forms-post-type.php:55
 msgid "Add New Form"
 msgstr "Lägg till formulär"
 
-#: includes/ahw-forms-post-type.php:67 includes/ahw-forms-post-type.php:113
+#: includes/ahw-forms-post-type.php:69 includes/ahw-forms-post-type.php:115
 msgid "Text"
 msgstr ""
 
-#: includes/ahw-forms-post-type.php:68 includes/ahw-forms-post-type.php:278
+#: includes/ahw-forms-post-type.php:70 includes/ahw-forms-post-type.php:296
 msgid "Email"
 msgstr "E-post"
 
-#: includes/ahw-forms-post-type.php:69
+#: includes/ahw-forms-post-type.php:71
 msgid "Ssn"
 msgstr "Personnummer"
 
-#: includes/ahw-forms-post-type.php:70
+#: includes/ahw-forms-post-type.php:72
 msgid "Text area"
-msgstr ""
+msgstr "Textyta"
 
-#: includes/ahw-forms-post-type.php:71
+#: includes/ahw-forms-post-type.php:73
 msgid "Dropdown"
 msgstr ""
 
-#: includes/ahw-forms-post-type.php:72
+#: includes/ahw-forms-post-type.php:74
 msgid "Checkbox"
-msgstr ""
+msgstr "Kryssruta"
 
-#: includes/ahw-forms-post-type.php:73
+#: includes/ahw-forms-post-type.php:75
 msgid "Sub heading"
 msgstr "Underrubrik"
 
-#: includes/ahw-forms-post-type.php:76
+#: includes/ahw-forms-post-type.php:78
 msgid "File"
 msgstr "Fil"
 
-#: includes/ahw-forms-post-type.php:79
+#: includes/ahw-forms-post-type.php:81
 msgid "Signature"
-msgstr ""
+msgstr "Signatur"
 
-#: includes/ahw-forms-post-type.php:84
+#: includes/ahw-forms-post-type.php:86
 msgid "Form fields"
 msgstr "Formulärfält"
 
-#: includes/ahw-forms-post-type.php:87
+#: includes/ahw-forms-post-type.php:89
 msgid "Fields"
 msgstr "Fält"
 
-#: includes/ahw-forms-post-type.php:95 includes/ahw-forms-post-type.php:153
+#: includes/ahw-forms-post-type.php:97 includes/ahw-forms-post-type.php:155
 msgid "Label"
 msgstr "Text"
 
-#: includes/ahw-forms-post-type.php:103
+#: includes/ahw-forms-post-type.php:105
 msgid "Field type"
 msgstr "Fälttyp"
 
-#: includes/ahw-forms-post-type.php:129
+#: includes/ahw-forms-post-type.php:131
 msgid "Placeholder text"
 msgstr "Text när inget är valt"
 
-#: includes/ahw-forms-post-type.php:145
+#: includes/ahw-forms-post-type.php:147
 msgid "Choices"
 msgstr "Val"
 
-#: includes/ahw-forms-post-type.php:160
+#: includes/ahw-forms-post-type.php:162
 msgid "Show extra information"
 msgstr "Visa extra information"
 
-#: includes/ahw-forms-post-type.php:167
+#: includes/ahw-forms-post-type.php:169
 msgid "Label for extra information"
 msgstr "Fältrubrik för extrainformation"
 
-#: includes/ahw-forms-post-type.php:183 includes/ahw-forms-post-type.php:218
+#: includes/ahw-forms-post-type.php:185 includes/ahw-forms-post-type.php:220
 msgid "Id"
 msgstr ""
 
-#: includes/ahw-forms-post-type.php:202
+#: includes/ahw-forms-post-type.php:204
 msgid "Required"
 msgstr "Obligatoriskt"
 
-#: includes/ahw-forms-post-type.php:226
+#: includes/ahw-forms-post-type.php:228
 msgid "Require consent"
 msgstr "Kräv samtycke"
 
-#: includes/ahw-forms-post-type.php:232
+#: includes/ahw-forms-post-type.php:234
 msgid "Consent text"
 msgstr "Text för samtycke"
 
-#: includes/ahw-forms-post-type.php:248
+#: includes/ahw-forms-post-type.php:250
 msgid "Submit button text"
 msgstr "Text på skicka-knappen"
 
-#: includes/ahw-forms-post-type.php:254
+#: includes/ahw-forms-post-type.php:256
 msgid "Allow pdf download"
 msgstr "Tillåt nedladdning av pdf"
 
-#: includes/ahw-forms-post-type.php:263
+#: includes/ahw-forms-post-type.php:261
+msgid "Download button text"
+msgstr "Text på nedladdningsknapp"
+
+#: includes/ahw-forms-post-type.php:265
+msgid "Download your form as a pdf"
+msgstr "Ladda ned ditt formulär som pdf"
+
+#: includes/ahw-forms-post-type.php:281
 msgid "Form settings"
 msgstr "Formulärinställningar"
 
-#: includes/ahw-forms-post-type.php:266
+#: includes/ahw-forms-post-type.php:284
 msgid "Confirmation message"
 msgstr "Bekräftelsemeddelande"
 
-#: includes/ahw-forms-post-type.php:274
+#: includes/ahw-forms-post-type.php:292
 msgid "Confirmations"
 msgstr "Bekräftelser"
 
-#: includes/ahw-forms-post-type.php:279
+#: includes/ahw-forms-post-type.php:297
 msgid "Save form entries"
 msgstr "Spara formulärinlägg"
 
-#: includes/ahw-forms-post-type.php:286
+#: includes/ahw-forms-post-type.php:304
 msgid "Email confirmation to address"
 msgstr "Adress att skicka till"
 
-#: includes/ahw-forms-post-type.php:301
+#: includes/ahw-forms-post-type.php:319
 msgid "Email confirmation subject"
 msgstr "Ämnesrad för e-post"
 

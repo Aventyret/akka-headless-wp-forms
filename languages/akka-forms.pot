@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-02-06T15:58:53+00:00\n"
+"POT-Creation-Date: 2026-02-06T20:36:19+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: akka-forms\n"
@@ -40,7 +40,7 @@ msgid "https://aventyret.com"
 msgstr ""
 
 #: includes/ahw-forms-api.php:83
-#: includes/ahw-forms-post-type.php:51
+#: includes/ahw-forms-post-type.php:53
 #: src/blocks/form-block.js:14
 #: src/blocks/form-block.js:50
 #: src/blocks/form-block.js:52
@@ -59,149 +59,157 @@ msgstr ""
 msgid "Consent is required"
 msgstr ""
 
-#: includes/ahw-forms-post-type.php:35
+#: includes/ahw-forms-post-type.php:37
 msgid "is required"
 msgstr ""
 
-#: includes/ahw-forms-post-type.php:36
+#: includes/ahw-forms-post-type.php:38
 msgid "is invalid"
 msgstr ""
 
-#: includes/ahw-forms-post-type.php:37
+#: includes/ahw-forms-post-type.php:39
 msgid "The form has errors"
 msgstr ""
 
-#: includes/ahw-forms-post-type.php:38
+#: includes/ahw-forms-post-type.php:40
 msgid "Your submission failed. Please try again."
 msgstr ""
 
-#: includes/ahw-forms-post-type.php:48
 #: includes/ahw-forms-post-type.php:50
+#: includes/ahw-forms-post-type.php:52
 msgid "Forms"
 msgstr ""
 
-#: includes/ahw-forms-post-type.php:52
-#: includes/ahw-forms-post-type.php:53
+#: includes/ahw-forms-post-type.php:54
+#: includes/ahw-forms-post-type.php:55
 msgid "Add New Form"
 msgstr ""
 
-#: includes/ahw-forms-post-type.php:67
-#: includes/ahw-forms-post-type.php:113
+#: includes/ahw-forms-post-type.php:69
+#: includes/ahw-forms-post-type.php:115
 msgid "Text"
 msgstr ""
 
-#: includes/ahw-forms-post-type.php:68
-#: includes/ahw-forms-post-type.php:278
+#: includes/ahw-forms-post-type.php:70
+#: includes/ahw-forms-post-type.php:296
 msgid "Email"
 msgstr ""
 
-#: includes/ahw-forms-post-type.php:69
+#: includes/ahw-forms-post-type.php:71
 msgid "Ssn"
 msgstr ""
 
-#: includes/ahw-forms-post-type.php:70
+#: includes/ahw-forms-post-type.php:72
 msgid "Text area"
 msgstr ""
 
-#: includes/ahw-forms-post-type.php:71
+#: includes/ahw-forms-post-type.php:73
 msgid "Dropdown"
 msgstr ""
 
-#: includes/ahw-forms-post-type.php:72
+#: includes/ahw-forms-post-type.php:74
 msgid "Checkbox"
 msgstr ""
 
-#: includes/ahw-forms-post-type.php:73
+#: includes/ahw-forms-post-type.php:75
 msgid "Sub heading"
 msgstr ""
 
-#: includes/ahw-forms-post-type.php:76
+#: includes/ahw-forms-post-type.php:78
 msgid "File"
 msgstr ""
 
-#: includes/ahw-forms-post-type.php:79
+#: includes/ahw-forms-post-type.php:81
 msgid "Signature"
 msgstr ""
 
-#: includes/ahw-forms-post-type.php:84
+#: includes/ahw-forms-post-type.php:86
 msgid "Form fields"
 msgstr ""
 
-#: includes/ahw-forms-post-type.php:87
+#: includes/ahw-forms-post-type.php:89
 msgid "Fields"
 msgstr ""
 
-#: includes/ahw-forms-post-type.php:95
-#: includes/ahw-forms-post-type.php:153
+#: includes/ahw-forms-post-type.php:97
+#: includes/ahw-forms-post-type.php:155
 msgid "Label"
 msgstr ""
 
-#: includes/ahw-forms-post-type.php:103
+#: includes/ahw-forms-post-type.php:105
 msgid "Field type"
 msgstr ""
 
-#: includes/ahw-forms-post-type.php:129
+#: includes/ahw-forms-post-type.php:131
 msgid "Placeholder text"
 msgstr ""
 
-#: includes/ahw-forms-post-type.php:145
+#: includes/ahw-forms-post-type.php:147
 msgid "Choices"
 msgstr ""
 
-#: includes/ahw-forms-post-type.php:160
+#: includes/ahw-forms-post-type.php:162
 msgid "Show extra information"
 msgstr ""
 
-#: includes/ahw-forms-post-type.php:167
+#: includes/ahw-forms-post-type.php:169
 msgid "Label for extra information"
 msgstr ""
 
-#: includes/ahw-forms-post-type.php:183
-#: includes/ahw-forms-post-type.php:218
+#: includes/ahw-forms-post-type.php:185
+#: includes/ahw-forms-post-type.php:220
 msgid "Id"
 msgstr ""
 
-#: includes/ahw-forms-post-type.php:202
+#: includes/ahw-forms-post-type.php:204
 msgid "Required"
 msgstr ""
 
-#: includes/ahw-forms-post-type.php:226
+#: includes/ahw-forms-post-type.php:228
 msgid "Require consent"
 msgstr ""
 
-#: includes/ahw-forms-post-type.php:232
+#: includes/ahw-forms-post-type.php:234
 msgid "Consent text"
 msgstr ""
 
-#: includes/ahw-forms-post-type.php:248
+#: includes/ahw-forms-post-type.php:250
 msgid "Submit button text"
 msgstr ""
 
-#: includes/ahw-forms-post-type.php:254
+#: includes/ahw-forms-post-type.php:256
 msgid "Allow pdf download"
 msgstr ""
 
-#: includes/ahw-forms-post-type.php:263
+#: includes/ahw-forms-post-type.php:261
+msgid "Download button text"
+msgstr ""
+
+#: includes/ahw-forms-post-type.php:265
+msgid "Download your form as a pdf"
+msgstr ""
+
+#: includes/ahw-forms-post-type.php:281
 msgid "Form settings"
 msgstr ""
 
-#: includes/ahw-forms-post-type.php:266
+#: includes/ahw-forms-post-type.php:284
 msgid "Confirmation message"
 msgstr ""
 
-#: includes/ahw-forms-post-type.php:274
+#: includes/ahw-forms-post-type.php:292
 msgid "Confirmations"
 msgstr ""
 
-#: includes/ahw-forms-post-type.php:279
+#: includes/ahw-forms-post-type.php:297
 msgid "Save form entries"
 msgstr ""
 
-#: includes/ahw-forms-post-type.php:286
+#: includes/ahw-forms-post-type.php:304
 msgid "Email confirmation to address"
 msgstr ""
 
-#: includes/ahw-forms-post-type.php:301
+#: includes/ahw-forms-post-type.php:319
 msgid "Email confirmation subject"
 msgstr ""
 
