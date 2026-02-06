@@ -28,10 +28,12 @@ class Akka_headless_wp_forms_post_type
           'subject' => Resolvers::resolve_field($post_data, 'email_confirmation_subject')
         ] : null,
         'save_entries' => in_array('save_entries', Resolvers::resolve_array_field($post_data, 'confirmations')),
+        'allow_download' => Resolvers::resolve_boolean_field($post_data, 'allow_download'),
       ];
       $post_data['texts'] = [
         'confirmation_text' => Resolvers::resolve_field($post_data, 'confirmation_text'),
         'submit_text' => Resolvers::resolve_field($post_data, 'submit_text'),
+        'download_text' => Resolvers::resolve_field($post_data, 'download_text'),
         'required_text' => __('is required', 'akka-forms'),
         'invalid_text' => __('is invalid', 'akka-forms'),
         'form_error_text' => __('The form has errors', 'akka-forms'),
@@ -254,6 +256,22 @@ class Akka_headless_wp_forms_post_type
             'label' => __('Allow pdf download', 'akka-forms'),
             'name' => 'allow_download',
             'type' => 'true_false',
+          ],
+          [
+            'label' => __('Download button text', 'akka-forms'),
+            'name' => 'download_text',
+            'type' => 'text',
+            'required' => '1',
+            'default_value' => __('Download your form as a pdf', 'akka-forms'),
+            'conditional_logic' => [
+              [
+                [
+                  'field' => 'field_allow_download',
+                  'operator' => '==',
+                  'value' => '1',
+                ],
+              ],
+            ],
           ],
         ],
         'position' => 'acf_after_title',
