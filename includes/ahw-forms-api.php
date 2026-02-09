@@ -42,7 +42,7 @@ class Akka_headless_wp_forms_api
 
   private static function validate_form($form, $fields) {
     return array_reduce($form['form_fields'], function($all_fields_are_valid, $field) use($fields) {
-      if ($field['required'] && self::field_is_empty($fields, $field['field_id'])) {
+      if ($field['required'] && !in_array($field['type'], ['heading']) && self::field_is_empty($fields, $field['field_id'])) {
         $all_fields_are_valid = false;
       }
       return $all_fields_are_valid;
