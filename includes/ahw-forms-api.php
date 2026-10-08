@@ -1,22 +1,21 @@
 <?php
-use \Akka_headless_wp_akka_blocks as AkkaBlocks;
-use \Akka_headless_wp_content as Content;
-use \Akka_headless_wp_resolvers as Resolvers;
-use \Akka_headless_wp_utils as Utils;
+use \Akka\Resolvers;
+use \Akka\Utils;
+use \Akka_headless_wp_forms_post_data as PostData;
 
 class Akka_headless_wp_forms_api
 {
   public static function submit_form($request)
   {
     $data = $request->get_params();
-    $form_id = Utils::getRouteParam($data, 'form_id');
-    $fields = Utils::getRouteParam($data, 'fields');
+    $form_id = Utils::get_route_param($data, 'form_id');
+    $fields = Utils::get_route_param($data, 'fields');
 
     if (!$form_id || !$fields) {
       return new \WP_REST_Response(['message' => 'Required parameters are missing'], 400);
     }
 
-    $form_post = Content::get_akka_post($form_id);
+    $form_post = PostData::get_form_post($form_id);
 
     if (!$form_post || $form_post['post_type'] != 'akka_form') {
       return new \WP_REST_Response(['message' => 'Form is not found'], 404);

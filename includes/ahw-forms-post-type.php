@@ -1,6 +1,6 @@
 <?php
-use \Akka_headless_wp_akka_post_types as PostTypes;
-use \Akka_headless_wp_resolvers as Resolvers;
+use \Akka\PostTypes;
+use \Akka\Resolvers;
 
 class Akka_headless_wp_forms_post_type
 {
@@ -74,10 +74,10 @@ class Akka_headless_wp_forms_post_type
       'checkbox' => __('Checkbox', 'akka-forms'),
       'heading' => __('Sub heading', 'akka-forms'),
     ];
-    if (env('AZURE_STORAGE_PRIVATE_ACCOUNT')) {
+    if (getenv('AZURE_STORAGE_PRIVATE_ACCOUNT')) {
       $field_type_choices['file'] = __('File', 'akka-forms');
     }
-    if (env('AKKA_FORMS_ALLOW_SIGNATURE_FIELD') && env('AZURE_STORAGE_PRIVATE_ACCOUNT')) {
+    if (filter_var(getenv('AKKA_FORMS_ALLOW_SIGNATURE_FIELD'), FILTER_VALIDATE_BOOLEAN) && getenv('AZURE_STORAGE_PRIVATE_ACCOUNT')) {
       $field_type_choices['signature'] = __('Signature', 'akka-forms');
     }
     return [

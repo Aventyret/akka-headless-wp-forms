@@ -5,7 +5,7 @@ Plugin URI: https://github.com/aventyret/akka-wp/blob/main/plugins/akka-headless
 Description: Forms plugin for Akka
 Author: Mediakooperativet, Äventyret
 Author URI: https://aventyret.com
-Version: 1.1.2
+Version: 3.0.0
 */
 
 if (basename($_SERVER['PHP_SELF']) == basename(__FILE__)){
@@ -20,8 +20,9 @@ if (defined('AKKA_HEADLESS_WP_FORMS'))
 define('AKKA_HEADLESS_WP_FORMS',  __FILE__ );
 define('AKKA_HEADLESS_WP_FORMS_DIR', plugin_dir_path( __FILE__ ));
 define('AKKA_HEADLESS_WP_FORMS_URI', plugin_dir_url( __FILE__ ));
-define('AKKA_HEADLESS_WP_FORMS_VER', "1.1.2");
+define('AKKA_HEADLESS_WP_FORMS_VER', "3.0.0");
 
+require_once(AKKA_HEADLESS_WP_FORMS_DIR . 'includes/ahw-forms-post-data.php');
 require_once(AKKA_HEADLESS_WP_FORMS_DIR . 'includes/ahw-forms-post-type.php');
 require_once(AKKA_HEADLESS_WP_FORMS_DIR . 'includes/ahw-forms-block.php');
 require_once(AKKA_HEADLESS_WP_FORMS_DIR . 'includes/ahw-forms-api.php');

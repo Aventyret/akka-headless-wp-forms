@@ -1,7 +1,4 @@
 <?php
-use \Akka_headless_wp_akka_post_types as PostTypes;
-use \Akka_headless_wp_resolvers as Resolvers;
-
 class Akka_headless_wp_forms_comment
 {
   private static $post_type_slug = 'akka_form';
