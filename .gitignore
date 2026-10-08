@@ -1,4 +1,5 @@
 .DS_Store
 
-/vendor
+/vendor/*
+!/vendor/philipnewcomer
 node_modules
