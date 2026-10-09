@@ -1,34 +1,33 @@
 <?php
-use \Akka_headless_wp_akka_blocks as AkkaBlocks;
-use \Akka_headless_wp_content as Content;
-use \Akka_headless_wp_resolvers as Resolvers;
-use \Akka_headless_wp_utils as Utils;
+namespace AkkaForms;
 
-class Akka_headless_wp_forms_api
+use \Akka\Resolvers;
+use \Akka\Utils;
+use \Akka\Post;
+
+class Api
 {
   public static function submit_form($request)
   {
     $data = $request->get_params();
-    $form_id = Utils::getRouteParam($data, 'form_id');
-    $fields = Utils::getRouteParam($data, 'fields');
+    $form_id = Utils::get_route_param($data, 'form_id');
+    $fields = Utils::get_route_param($data, 'fields');
 
     if (!$form_id || !$fields) {
       return new \WP_REST_Response(['message' => 'Required parameters are missing'], 400);
     }
 
-    $form_post = Content::get_akka_post($form_id);
+    $form = Post::get_single($form_id);
 
-    if (!$form_post || $form_post['post_type'] != 'akka_form') {
+    if (!$form || $form['post_type'] != 'akka_form') {
       return new \WP_REST_Response(['message' => 'Form is not found'], 404);
     }
-
-    $form = apply_filters('ahw_post_data', $form_post);
 
     if (!self::validate_form($form, $fields)) {
       return new \WP_REST_Response(['message' => 'The submitted form fields are invalid'], 400);
     }
 
-    do_action('ahw_form_submit', $form, $fields);
+    do_action('akka_form_submit', $form, $fields);
     if ($form['settings']['email_confirmation']) {
       self::send_email_confirmation($form, $fields);
     }
