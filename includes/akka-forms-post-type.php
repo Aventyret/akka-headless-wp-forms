@@ -1,8 +1,10 @@
 <?php
+namespace AkkaForms;
+
 use \Akka\PostTypes;
 use \Akka\Resolvers;
 
-class Akka_headless_wp_forms_post_type
+class PostType
 {
   private static $post_type_slug = 'akka_form';
 
@@ -12,35 +14,32 @@ class Akka_headless_wp_forms_post_type
       'acf_field_groups' => self::post_type_acf_field_groups(),
     ]);
 
-    add_filter('ahw_post_data', function ($post_data) {
-      if ($post_data['post_type'] != self::$post_type_slug) {
-        return $post_data;
-      }
-      $post_data['form_fields'] = Resolvers::resolve_field($post_data, 'form_fields');
+    add_filter('akka_post_' . self::$post_type_slug . '_single', function ($post_single) {
+      $post_single['form_fields'] = Resolvers::resolve_field($post_single, 'form_fields');
 
-      $post_data['consent'] = Resolvers::resolve_boolean_field($post_data, 'require_consent') ? [
-        'label' => Resolvers::resolve_field($post_data, 'consent_label'),
+      $post_single['consent'] = Resolvers::resolve_boolean_field($post_single, 'require_consent') ? [
+        'label' => Resolvers::resolve_field($post_single, 'consent_label'),
         'required_text' => __('Consent is required', 'akka-forms'),
       ] : null;
-      $post_data['settings'] = [
-        'email_confirmation' => in_array('email', Resolvers::resolve_array_field($post_data, 'confirmations')) ? [
-          'to_address' => Resolvers::resolve_field($post_data, 'email_confirmation_to_address'),
-          'subject' => Resolvers::resolve_field($post_data, 'email_confirmation_subject')
+      $post_single['settings'] = [
+        'email_confirmation' => in_array('email', Resolvers::resolve_array_field($post_single, 'confirmations')) ? [
+          'to_address' => Resolvers::resolve_field($post_single, 'email_confirmation_to_address'),
+          'subject' => Resolvers::resolve_field($post_single, 'email_confirmation_subject')
         ] : null,
-        'save_entries' => in_array('save_entries', Resolvers::resolve_array_field($post_data, 'confirmations')),
-        'allow_download' => Resolvers::resolve_boolean_field($post_data, 'allow_download'),
+        'save_entries' => in_array('save_entries', Resolvers::resolve_array_field($post_single, 'confirmations')),
+        'allow_download' => Resolvers::resolve_boolean_field($post_single, 'allow_download'),
       ];
-      $post_data['texts'] = [
-        'confirmation_text' => Resolvers::resolve_field($post_data, 'confirmation_text'),
-        'submit_text' => Resolvers::resolve_field($post_data, 'submit_text'),
-        'download_text' => Resolvers::resolve_field($post_data, 'download_text'),
+      $post_single['texts'] = [
+        'confirmation_text' => Resolvers::resolve_field($post_single, 'confirmation_text'),
+        'submit_text' => Resolvers::resolve_field($post_single, 'submit_text'),
+        'download_text' => Resolvers::resolve_field($post_single, 'download_text'),
         'required_text' => __('is required', 'akka-forms'),
         'invalid_text' => __('is invalid', 'akka-forms'),
         'form_error_text' => __('The form has errors', 'akka-forms'),
         'form_failed_text' => __('Your submission failed. Please try again.', 'akka-forms'),
       ];
 
-      return $post_data;
+      return $post_single;
     });
   }
 
@@ -352,4 +351,4 @@ class Akka_headless_wp_forms_post_type
   }
 }
 
-Akka_headless_wp_forms_post_type::hooks();
+PostType::hooks();

@@ -1,5 +1,7 @@
 <?php
-class Akka_headless_wp_forms_comment
+namespace AkkaForms;
+
+class Comment
 {
   private static $post_type_slug = 'akka_form';
 
@@ -11,4 +13,4 @@ class Akka_headless_wp_forms_comment
   }
 }
 
-Akka_headless_wp_forms_comment::hooks();
+Comment::hooks();

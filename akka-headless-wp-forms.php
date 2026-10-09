@@ -33,10 +33,9 @@ add_action('acf/include_field_types', function () {
   new \PhilipNewcomer\ACF_Unique_ID_Field\ACF_Field_Unique_ID();
 }, 20);
 
-require_once(AKKA_HEADLESS_WP_FORMS_DIR . 'includes/ahw-forms-post-data.php');
-require_once(AKKA_HEADLESS_WP_FORMS_DIR . 'includes/ahw-forms-post-type.php');
-require_once(AKKA_HEADLESS_WP_FORMS_DIR . 'includes/ahw-forms-block.php');
-require_once(AKKA_HEADLESS_WP_FORMS_DIR . 'includes/ahw-forms-api.php');
-require_once(AKKA_HEADLESS_WP_FORMS_DIR . 'includes/ahw-forms-comment.php');
-require_once(AKKA_HEADLESS_WP_FORMS_DIR . 'public/ahw-forms-hooks.php');
-require_once(AKKA_HEADLESS_WP_FORMS_DIR . 'public/ahw-forms-rest-endpoints.php');
+require_once(AKKA_HEADLESS_WP_FORMS_DIR . 'includes/akka-forms-post-type.php');
+require_once(AKKA_HEADLESS_WP_FORMS_DIR . 'includes/akka-forms-block.php');
+require_once(AKKA_HEADLESS_WP_FORMS_DIR . 'includes/akka-forms-api.php');
+require_once(AKKA_HEADLESS_WP_FORMS_DIR . 'includes/akka-forms-comment.php');
+require_once(AKKA_HEADLESS_WP_FORMS_DIR . 'public/akka-forms-hooks.php');
+require_once(AKKA_HEADLESS_WP_FORMS_DIR . 'public/akka-forms-rest-endpoints.php');
