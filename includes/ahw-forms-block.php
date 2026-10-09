@@ -1,6 +1,7 @@
 <?php
 use \Akka\AkkaBlocks;
 use \Akka\Resolvers;
+use \Akka\Post;
 use \Akka_headless_wp_forms_post_data as PostData;
 
 class Akka_headless_wp_forms_block
@@ -16,14 +17,7 @@ class Akka_headless_wp_forms_block
           return $props;
         }
 
-        $form_post = PostData::get_form_post($props['formId']);
-
-        if (!$form_post || $form_post['post_type'] != 'akka_form') {
-          return $props;
-        }
-
-        $form_post['post_content'] = get_the_content(null, false, $props['formId']);
-        $props['form'] = apply_filters('ahw_post_data', $form_post);
+        $props['form'] = Post::get_single($props['formId']);
 
         return $props;
       },

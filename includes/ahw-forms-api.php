@@ -1,7 +1,7 @@
 <?php
 use \Akka\Resolvers;
 use \Akka\Utils;
-use \Akka_headless_wp_forms_post_data as PostData;
+use \Akka\Post;
 
 class Akka_headless_wp_forms_api
 {
@@ -15,7 +15,7 @@ class Akka_headless_wp_forms_api
       return new \WP_REST_Response(['message' => 'Required parameters are missing'], 400);
     }
 
-    $form_post = PostData::get_form_post($form_id);
+    $form_post = Post::get_single($form_id);
 
     if (!$form_post || $form_post['post_type'] != 'akka_form') {
       return new \WP_REST_Response(['message' => 'Form is not found'], 404);
