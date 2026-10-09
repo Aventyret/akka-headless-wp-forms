@@ -1,8 +1,10 @@
 <?php
+namespace AkkaForms;
+
 use \Akka\PostTypes;
 use \Akka\Resolvers;
 
-class Akka_headless_wp_forms_post_type
+class PostType
 {
   private static $post_type_slug = 'akka_form';
 
@@ -333,4 +335,4 @@ class Akka_headless_wp_forms_post_type
   }
 }
 
-Akka_headless_wp_forms_post_type::hooks();
+PostType::hooks();

@@ -1,15 +1,16 @@
 <?php
+namespace AkkaForms;
+
 use \Akka\AkkaBlocks;
 use \Akka\Resolvers;
 use \Akka\Post;
-use \Akka_headless_wp_forms_post_data as PostData;
 
-class Akka_headless_wp_forms_block
+class Block
 {
   public static function init()
   {
     AkkaBlocks::register_block_type('akka/form', [
-      'akka_component_name' => apply_filters('ahw_forms_form_component_name', 'AkkaForm'),
+      'akka_component_name' => apply_filters('akka_forms_form_component_name', 'AkkaForm'),
       'block_props_callback' => function ($post_id, $block_attributes) {
         $props = $block_attributes;
 
@@ -21,9 +22,9 @@ class Akka_headless_wp_forms_block
 
         return $props;
       },
-      'post_types' => apply_filters('ahw_forms_form_block_post_types', ['page']),
+      'post_types' => apply_filters('akka_forms_form_block_post_types', ['page']),
     ]);
   }
 }
 
-Akka_headless_wp_forms_block::init();
+Block::init();

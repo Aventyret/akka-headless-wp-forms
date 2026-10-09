@@ -1,9 +1,11 @@
 <?php
+namespace AkkaForms;
+
 use \Akka\Resolvers;
 use \Akka\Utils;
 use \Akka\Post;
 
-class Akka_headless_wp_forms_api
+class Api
 {
   public static function submit_form($request)
   {
@@ -25,7 +27,7 @@ class Akka_headless_wp_forms_api
       return new \WP_REST_Response(['message' => 'The submitted form fields are invalid'], 400);
     }
 
-    do_action('ahw_form_submit', $form, $fields);
+    do_action('akka_form_submit', $form, $fields);
     if ($form['settings']['email_confirmation']) {
       self::send_email_confirmation($form, $fields);
     }
