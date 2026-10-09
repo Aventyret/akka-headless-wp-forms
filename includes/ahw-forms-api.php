@@ -15,13 +15,11 @@ class Akka_headless_wp_forms_api
       return new \WP_REST_Response(['message' => 'Required parameters are missing'], 400);
     }
 
-    $form_post = Post::get_single($form_id);
+    $form = Post::get_single($form_id);
 
-    if (!$form_post || $form_post['post_type'] != 'akka_form') {
+    if (!$form || $form['post_type'] != 'akka_form') {
       return new \WP_REST_Response(['message' => 'Form is not found'], 404);
     }
-
-    $form = apply_filters('ahw_post_data', $form_post);
 
     if (!self::validate_form($form, $fields)) {
       return new \WP_REST_Response(['message' => 'The submitted form fields are invalid'], 400);
