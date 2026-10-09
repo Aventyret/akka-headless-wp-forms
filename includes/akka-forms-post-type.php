@@ -215,6 +215,22 @@ class PostType
                 'parent_repeater' => 'field_form_fields',
               ],
               [
+                'key' => 'field_form_fields_clear_text',
+                'label' => __('Clear text', 'akka-forms'),
+                'name' => 'clear_text',
+                'type' => 'text',
+                'conditional_logic' => [
+                  [
+                    [
+                      'field' => 'field_form_fields_type',
+                      'operator' => '==',
+                      'value' => 'signature',
+                    ],
+                  ],
+                ],
+                'parent_repeater' => 'field_form_fields',
+              ],
+              [
                 'key' => 'field_form_fields_field_id',
                 'label' => __('Id', 'akka-forms'),
                 'name' => 'field_id',
